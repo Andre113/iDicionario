@@ -16,6 +16,7 @@
     
     UILabel *palavra;
     UIImageView *imagem;
+    UIButton *botao;
 }
 
 @end
@@ -25,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:1];
+    
     //Inicia o dictionaryManager
     DictionaryManager *dictionary = [DictionaryManager sharedInstance];
     
@@ -33,14 +36,18 @@
     int cont = [dictionary getCont];
     
     //Inicia as labels e botões
-    palavra = [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 300, 50)];
+    palavra = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, super.view.bounds.size.width, 80)];
+    palavra.textAlignment = NSTextAlignmentCenter;
+    palavra.center = self.view.center;
     [palavra setTextColor: [UIColor blackColor]];
     [palavra setHidden:YES];
     
-    imagem = [[UIImageView alloc] initWithFrame:CGRectMake(300, 300, 100, 100)];
+    imagem = [[UIImageView alloc] initWithFrame:CGRectMake(30, 400, 260, 180)];
+    [imagem.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [imagem.layer setBorderWidth: 2.0];
     [imagem setHidden:YES];
     
-    UIButton *botao = [UIButton
+    botao = [UIButton
                        buttonWithType:UIButtonTypeSystem];
     [botao addTarget:self action:@selector(mostrar:) forControlEvents:UIControlEventTouchUpInside];
     [botao
@@ -63,6 +70,7 @@
     
     [self.view addSubview:botao];
     [self.view addSubview:palavra];
+    [self.view addSubview:imagem];
     NSLog (@"%d", cont);
     
     //Atribui o valor das labels e título
@@ -83,7 +91,7 @@
                                     initWithNibName:nil
                                     bundle:NULL];
     [self.navigationController pushViewController:proximo
-                                         animated:YES];
+                                         animated:NO];
 }
 
 -(void)back:(id)sender {
@@ -98,6 +106,7 @@
 }
 
 -(void)mostrar:(id)sender{
+    [botao setHidden:YES];
     DictionaryManager *dictionary = [DictionaryManager sharedInstance];
     
 //    UILabel *palavra = [[UILabel alloc]initWithFrame:CGRectMake(200, 200, 200, 200)];
@@ -109,8 +118,22 @@
     
     [palavra setText:[palavras objectAtIndex:cont]];
     [palavra setHidden:NO];
-//    UIImage *img = [imagens objectAtIndex:cont];
-//    [imagem setImage:img];
+    
+    NSString *img = [imagens objectAtIndex:cont];
+    [imagem setImage: [UIImage imageNamed:img]];
+    [imagem setHidden:NO];
+    
+    [self animacao];
+}
+
+-(void) animacao{
+    [UIView animateWithDuration: 1 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
+        palavra.transform= CGAffineTransformMakeTranslation(0, -180);
+        imagem.transform= CGAffineTransformMakeTranslation(0, -180);
+    }
+                     completion:^(BOOL finished) {
+                     }
+     ];
 }
 
 /*
