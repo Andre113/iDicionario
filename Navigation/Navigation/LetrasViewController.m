@@ -90,7 +90,10 @@
     //Inicia o dictionaryManager
     DictionaryManager *dictionary = [DictionaryManager sharedInstance];
     
+    //Decrementa o contador
     [dictionary decrementa];
+    
+    //Volta para view anterior
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -109,12 +112,6 @@
 //    UIImage *img = [imagens objectAtIndex:cont];
 //    [imagem setImage:img];
 }
-
-//-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-//    DictionaryManager *dictionary = [DictionaryManager sharedInstance];
-//    
-//    [dictionary decrementa];
-//}
 
 /*
  #pragma mark - Navigation

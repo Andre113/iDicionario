@@ -50,7 +50,7 @@ static bool isFirst = YES;
 
 - (NSArray *) iniciaPalavras{
     NSArray *palavras;
-    palavras = @[@"Ahri", @"Bardo", @"Capa de Fogo Solar", @"Darius", @"E", @"Forno", @"Gnar", @"Hecarim", @"Iraque", @"J", @"Kalista", @"LeBlanc", @"Mar", @"Nerd", @"Ostra", @"Pinguim", @"Quartzo", @"Riso", @"Sirene", @"T", @"Urgot", @"Vel`Koz", @"Wukong", @"Xerath", @"Yasuo", @"Zyra"];
+    palavras = @[@"Ahri", @"Bardo", @"Corki", @"Darius", @"Ezreal", @"Fizz", @"Gnar", @"Hecarim", @"Irelia", @"Jarvan IV", @"Kalista", @"LeBlanc", @"Morgana", @"Nunu", @"Orianna", @"Pantheon", @"Quinn", @"Rengar", @"Syndra", @"Twisted Fate", @"Udyr", @"Vel`Koz", @"Wukong", @"Xerath", @"Yasuo", @"Zilean"];
     return palavras;
 }
 
