@@ -1,5 +1,5 @@
 //
-//  LetraAViewController.h
+//  LetrasViewController.h
 //  Navigation
 //
 //  Created by Vinicius Miana on 2/23/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LetraAViewController : UIViewController
+@interface LetrasViewController : UIViewController <UINavigationControllerDelegate>
 
 @end
