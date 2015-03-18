@@ -69,12 +69,12 @@
 
 //    }
     
-    //        [UIView animateWithDuration: 3 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
-    //            self.view.backgroundColor = [self getRandomColor];
-    //        }
-    //                         completion:^(BOOL finished) {
-    //                         }
-    //         ];
+//            [UIView animateWithDuration: 3 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
+//                self.view.backgroundColor = [self getRandomColor];
+//            }
+//                             completion:^(BOOL finished) {
+//                             }
+//             ];
     
     
     [self.view addSubview:botao];
@@ -104,8 +104,14 @@
     }
     
     LetrasViewController *proximo = [[LetrasViewController alloc] initWithNibName:nil bundle:NULL];
-    [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
-    [self.navigationController pushViewController:proximo animated:NO];
+    [UIView animateWithDuration:0.75 animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
+        [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
+        [self.navigationController pushViewController:proximo animated:NO];
+    }];
+//    [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
+//    [self.navigationController pushViewController:proximo animated:YES];
 }
 
 //Método chamado ao apertar o botão de voltar
@@ -121,9 +127,14 @@
     }
     
     LetrasViewController *last = [[LetrasViewController alloc] initWithNibName:nil bundle:NULL];
+    [UIView animateWithDuration:0.75
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
+                     }];
 
     [self.navigationController setViewControllers:[NSArray arrayWithObjects: last, self, nil]];
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //Método chamado ao apertar o botão de mostrar
@@ -160,11 +171,11 @@
      ];
 }
 
-//Método para pegar uma cor aleatória
+////Método para pegar uma cor aleatória
 //-(UIColor *)getRandomColor{
 //    CGFloat rand = ( arc4random() % 256 / 256.0 ); // 0.0 to 1.0
 //    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0, away from white
-//    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0, away from black
+//    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 1.0; // 0.5 to 1.0, away from black
 //    UIColor *cor = [UIColor colorWithHue:rand saturation:saturation brightness:brightness alpha:1];
 //    
 //    return cor;
