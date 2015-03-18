@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DictionaryManager : NSObject
+@interface DictionaryManager : NSObject{
+}
 
 
 + (DictionaryManager *)sharedInstance;
 
+//- (Boolean)checkView;
+- (void) setCont:(int)cont;
 - (int) getCont;
 - (NSArray *) iniciaLetras;
 - (NSArray *) iniciaImagens;

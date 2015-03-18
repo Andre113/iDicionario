@@ -33,6 +33,7 @@
 		242145071AB8804900FADD41 /* imgx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242144EF1AB8804900FADD41 /* imgx.jpg */; };
 		242145081AB8804900FADD41 /* imgy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242144F01AB8804900FADD41 /* imgy.jpg */; };
 		242145091AB8804900FADD41 /* imgz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242144F11AB8804900FADD41 /* imgz.jpg */; };
+		242E86AC1AB8A9D200825E07 /* InicioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E86AB1AB8A9D200825E07 /* InicioViewController.m */; };
 		249CE8B41AB74EA3007C282A /* DictionaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CE8B31AB74EA3007C282A /* DictionaryManager.m */; };
 		27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4C18B76AF50053A99C /* Foundation.framework */; };
 		27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4E18B76AF50053A99C /* CoreGraphics.framework */; };
@@ -87,6 +88,8 @@
 		242144EF1AB8804900FADD41 /* imgx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgx.jpg; path = Images.xcassets/imgx.jpg; sourceTree = "<group>"; };
 		242144F01AB8804900FADD41 /* imgy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgy.jpg; path = Images.xcassets/imgy.jpg; sourceTree = "<group>"; };
 		242144F11AB8804900FADD41 /* imgz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgz.jpg; path = Images.xcassets/imgz.jpg; sourceTree = "<group>"; };
+		242E86AA1AB8A9D200825E07 /* InicioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InicioViewController.h; sourceTree = "<group>"; };
+		242E86AB1AB8A9D200825E07 /* InicioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InicioViewController.m; sourceTree = "<group>"; };
 		249CE8B21AB74EA3007C282A /* DictionaryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryManager.h; sourceTree = "<group>"; };
 		249CE8B31AB74EA3007C282A /* DictionaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryManager.m; sourceTree = "<group>"; };
 		27156F4918B76AF50053A99C /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +218,8 @@
 				27156F5A18B76AF50053A99C /* Navigation-Prefix.pch */,
 				249CE8B21AB74EA3007C282A /* DictionaryManager.h */,
 				249CE8B31AB74EA3007C282A /* DictionaryManager.m */,
+				242E86AA1AB8A9D200825E07 /* InicioViewController.h */,
+				242E86AB1AB8A9D200825E07 /* InicioViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
+				242E86AC1AB8A9D200825E07 /* InicioViewController.m in Sources */,
 				27156F7D18BA89430053A99C /* LetrasViewController.m in Sources */,
 				249CE8B41AB74EA3007C282A /* DictionaryManager.m in Sources */,
 				27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */,

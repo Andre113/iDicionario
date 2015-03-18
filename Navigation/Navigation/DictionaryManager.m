@@ -8,11 +8,12 @@
 
 #import "DictionaryManager.h"
 
-@implementation DictionaryManager
+@implementation DictionaryManager{
+//    NSMutableArray *views;
+}
 
 static DictionaryManager *SINGLETON = nil;
 static int cont = 0;
-
 static bool isFirst = YES;
 
 #pragma mark - Public Method
@@ -27,6 +28,7 @@ static bool isFirst = YES;
     
     return SINGLETON;
 }
+
 
 - (NSArray *) iniciaLetras{
     NSArray *letras = [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" componentsSeparatedByString:@" "];
@@ -56,6 +58,10 @@ static bool isFirst = YES;
 
 - (int)getCont{
     return cont;
+}
+
+- (void)setCont: (int)novo{
+    cont = novo;
 }
 
 - (void) incrementa{

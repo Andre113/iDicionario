@@ -8,23 +8,38 @@
 
 #import "MackenzieAppDelegate.h"
 #import "LetrasViewController.h"
+#import "DictionaryManager.h"
 
-@implementation MackenzieAppDelegate
+@implementation MackenzieAppDelegate{
+}
+
+@synthesize navigationController, tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     LetrasViewController *viewController = [[LetrasViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
+//    LetrasViewController *lastController = [[LetrasViewController alloc]
+//                                            initWithNibName:nil
+//                                            bundle:nil];
+//    LetrasViewController *proxController = [[LetrasViewController alloc]
+//                                            initWithNibName:nil
+//                                            bundle:nil];
     
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+//    [navigationController pushViewController:lastController animated:NO];
+//    [navigationController pushViewController:proxController animated:NO];
+    
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
-
-
+    
+//    self.tabBarController = [[UITabBarController alloc]init];
+//    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, nil];
+//    self.window.rootViewController = self.tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
