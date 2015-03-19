@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InicioViewController : UIViewController <UITextFieldDelegate>
-
+//@interface InicioViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end

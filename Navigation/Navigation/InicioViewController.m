@@ -22,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [table setDelegate:self];
+//    [table setDataSource:self];
+    
     
     self.view.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
 
@@ -43,10 +46,17 @@
     botao.frame = CGRectMake(63, 100, 200, 40);
     
 //    TableView e opções
-    
+    table = [[UITableView alloc]initWithFrame:CGRectMake(25, 150, 270, 500)];
+    table.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
+    CALayer *lay = table.layer;
+    [lay setMasksToBounds:YES];
+    [lay setCornerRadius: 4.0];
+    [lay setBorderWidth:1.0];
+    [lay setBorderColor:[[UIColor colorWithWhite: 0.8 alpha: 1.0] CGColor]];
     
     [self.view addSubview:textoBusca];
     [self.view addSubview:botao];
+    [self.view addSubview:table];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,15 +64,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *) formatar{
-    NSString *saida = textoBusca.text;
+- (NSString *) formatar: (NSString *)entrada{
+    NSString *saida = entrada;
     saida = [saida stringByReplacingOccurrencesOfString:@" " withString:@""];
     saida = [saida lowercaseString];
     return saida;
 }
 
 - (void)busca: (id)sender{
-    NSString *texto = [self formatar];
+    NSString *texto = [self formatar: textoBusca.text];
     
     if(texto != nil){
         DictionaryManager *dictionary = [DictionaryManager sharedInstance];
@@ -72,7 +82,7 @@
     
         for (int i=0; i<25 && find==false; i++){
             p=[palavras objectAtIndex:i];
-            if ([p isEqualToString:texto]){
+            if ([texto isEqualToString:[self formatar:p]]){
                 NSLog(@"GO");
                 find = true;
                 [dictionary setCont:i];

@@ -29,39 +29,35 @@
     //Inicia o dictionaryManager
     DictionaryManager *dictionary = [DictionaryManager sharedInstance];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
-    
     //Inicia os arrays e pega o valor do contador
     letras = [dictionary iniciaLetras];
     int cont = [dictionary getCont];
     
-    //Inicia as labels e botões
+    //Palavra
     palavra = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, super.view.bounds.size.width, 80)];
     palavra.textAlignment = NSTextAlignmentCenter;
     palavra.center = self.view.center;
     [palavra setTextColor: [UIColor blackColor]];
     [palavra setHidden:YES];
     
+    //Imagem
     imagem = [[UIImageView alloc] initWithFrame:CGRectMake(30, 400, 260, 180)];
     [imagem.layer setBorderColor: [[UIColor blackColor] CGColor]];
     [imagem.layer setBorderWidth: 4.0];
     [imagem setHidden:YES];
     
-    botao = [UIButton
-                       buttonWithType:UIButtonTypeSystem];
+    //Botão
+    botao = [UIButton buttonWithType:UIButtonTypeSystem];
     [botao addTarget:self action:@selector(mostrar:) forControlEvents:UIControlEventTouchUpInside];
-    [botao
-     setTitle:@"Mostre"
-     forState:UIControlStateNormal];
+    [botao setTitle:@"Mostre" forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
     
-        UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target: self action:@selector(back:)];
-        self.navigationItem.leftBarButtonItem=back;
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target: self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem=back;
     
-        UIBarButtonItem *next = [[UIBarButtonItem alloc]
-                                 initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
-        self.navigationItem.rightBarButtonItem=next;
+    UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
+    self.navigationItem.rightBarButtonItem=next;
     
 //            [UIView animateWithDuration: 3 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
 //                self.view.backgroundColor = [self getRandomColor];
@@ -71,14 +67,17 @@
 //             ];
     
     
+    //Adicionar subviews
     [self.view addSubview:botao];
     [self.view addSubview:palavra];
     [self.view addSubview:imagem];
     
+    //Testes
     NSLog (@"%d", cont);
     NSLog (@"%d", views.count);
     
-    //Atribui o valor das labels e título
+    //Opcões da view
+    self.view.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
     self.title = nil;
     self.navigationItem.title = [letras objectAtIndex:cont];
 }
@@ -144,9 +143,9 @@
     [palavra setHidden:NO];
     
     NSString *img = [imagens objectAtIndex:cont];
-    
-    
     [imagem setImage: [UIImage imageNamed:img]];
+    
+//    [imagem setImage: [UIImage imageWithContentsOfFile:img]];
     [imagem setHidden:NO];
     
     [self animacao];
