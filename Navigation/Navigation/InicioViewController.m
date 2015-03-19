@@ -97,17 +97,19 @@
                  
                 [self.tabBarController setViewControllers: [NSArray arrayWithObjects:self, navigation, nil]];
                 [self.tabBarController setSelectedIndex:1];
-//                [UIView animateWithDuration:0.75 animations:^{
-//                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//                    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
-//                    [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
-//                }];
             }
         }
         
         if (find == false){
             NSLog (@"KK");
-            
+            [UIView animateWithDuration: 0.07 delay: 0 options:
+             UIViewAnimationCurveLinear animations:^{
+                 [UIView setAnimationRepeatCount:5.0];
+                 botao.transform= CGAffineTransformMakeTranslation(0, 4);
+             }
+                             completion:^(BOOL finished) {
+                                 botao.transform= CGAffineTransformMakeTranslation(0, 0);
+                             }];
         }
     }
 }
