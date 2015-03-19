@@ -39,7 +39,7 @@ static bool isFirst = YES;
 - (NSMutableArray *) iniciaImagens{
     NSMutableArray *imagens = [[NSMutableArray alloc]init];
     
-    for (char i ='a'; i<'z'; i++){
+    for (char i ='a'; i<='z'; i++){
 //        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"img%c.jpg", i]];
 //        [imagens addObject:img];
         
@@ -52,7 +52,7 @@ static bool isFirst = YES;
 
 - (NSArray *) iniciaPalavras{
     NSArray *palavras;
-    palavras = @[@"Ahri", @"Bardo", @"Corki", @"Darius", @"Ezreal", @"Fizz", @"Gnar", @"Hecarim", @"Irelia", @"Jarvan IV", @"Kalista", @"LeBlanc", @"Morgana", @"Nunu", @"Orianna", @"Pantheon", @"Quinn", @"Rengar", @"Syndra", @"Twisted Fate", @"Udyr", @"Vel`Koz", @"Wukong", @"Xerath", @"Yasuo", @"Zilean"];
+    palavras = @[@"ahri", @"bardo", @"corki", @"darius", @"ezreal", @"fizz", @"gnar", @"hecarim", @"irelia", @"jarvaniv", @"kalista", @"leblanc", @"morgana", @"nunu", @"orianna", @"pantheon", @"quinn", @"rengar", @"syndra", @"twistedfate", @"udyr", @"velkoz", @"wukong", @"xerath", @"yasuo", @"zilean"];
     return palavras;
 }
 

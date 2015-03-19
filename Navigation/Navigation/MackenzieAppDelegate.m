@@ -8,7 +8,7 @@
 
 #import "MackenzieAppDelegate.h"
 #import "LetrasViewController.h"
-#import "DictionaryManager.h"
+#import "InicioViewController.h"
 
 @implementation MackenzieAppDelegate{
 }
@@ -17,35 +17,42 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
     
     LetrasViewController *viewController = [[LetrasViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
-//    LetrasViewController *lastController = [[LetrasViewController alloc]
-//                                            initWithNibName:nil
-//                                            bundle:nil];
-//    LetrasViewController *proxController = [[LetrasViewController alloc]
-//                                            initWithNibName:nil
-//                                            bundle:nil];
+    InicioViewController *inicio = [[InicioViewController alloc]initWithNibName:nil bundle: nil];
     
-    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    navigationController = [[UINavigationController alloc] init];
+    [navigationController setViewControllers: [NSArray arrayWithObjects:viewController, nil]];
     
-//    [navigationController pushViewController:lastController animated:NO];
-//    [navigationController pushViewController:proxController animated:NO];
+    tabBarController = [[UITabBarController alloc]init];
+//    UITabBarItem  *tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
+//    [tabBarController setTabBarItem: tabBarItem];
     
-    self.window = [[UIWindow alloc]
-                   initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
+    [tabBarController setViewControllers: [NSArray arrayWithObjects: inicio, navigationController, nil]];
+    UIImage *imagem1 = [[UIImage alloc]init];
+    imagem1 = [UIImage imageNamed:@"TabView.png"];
     
-//    self.tabBarController = [[UITabBarController alloc]init];
-//    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, nil];
-//    self.window.rootViewController = self.tabBarController;
+    UIImage *imagem2 = [[UIImage alloc]init];
+    imagem2 = [UIImage imageNamed:@"dicionario.png"];
+
+    navigationController.tabBarItem = [[UITabBarItem alloc]initWithTitle:nil image:imagem1 tag: 1];
+    inicio.tabBarItem = [[UITabBarItem alloc]initWithTitle:nil image:imagem2 tag:0];
+    
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
 }
+
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController;{
+//    [viewController.view setNeedsDisplay];
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

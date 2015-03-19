@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MackenzieAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MackenzieAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) UINavigationController *navigationController;

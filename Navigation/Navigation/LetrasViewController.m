@@ -56,18 +56,12 @@
     [botao sizeToFit];
     botao.center = self.view.center;
     
-//    if(cont > 0){
         UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target: self action:@selector(back:)];
         self.navigationItem.leftBarButtonItem=back;
-//    }
     
-//    if(cont <25){
         UIBarButtonItem *next = [[UIBarButtonItem alloc]
                                  initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
         self.navigationItem.rightBarButtonItem=next;
-        
-
-//    }
     
 //            [UIView animateWithDuration: 3 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
 //                self.view.backgroundColor = [self getRandomColor];
@@ -80,11 +74,13 @@
     [self.view addSubview:botao];
     [self.view addSubview:palavra];
     [self.view addSubview:imagem];
+    
     NSLog (@"%d", cont);
     NSLog (@"%d", views.count);
     
     //Atribui o valor das labels e título
-    self.title = [letras objectAtIndex:cont];
+    self.title = nil;
+    self.navigationItem.title = [letras objectAtIndex:cont];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,8 +106,6 @@
         [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
         [self.navigationController pushViewController:proximo animated:NO];
     }];
-//    [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
-//    [self.navigationController pushViewController:proximo animated:YES];
 }
 
 //Método chamado ao apertar o botão de voltar
@@ -141,10 +135,7 @@
 -(void)mostrar:(id)sender{
     [botao setHidden:YES];
     DictionaryManager *dictionary = [DictionaryManager sharedInstance];
-    
-//    UILabel *palavra = [[UILabel alloc]initWithFrame:CGRectMake(200, 200, 200, 200)];
-//    UIImageView *imagem = [[UIImageView alloc]init];
-//    
+       
     imagens = [dictionary iniciaImagens];
     palavras = [dictionary iniciaPalavras];
     int cont = [dictionary getCont];
@@ -153,6 +144,8 @@
     [palavra setHidden:NO];
     
     NSString *img = [imagens objectAtIndex:cont];
+    
+    
     [imagem setImage: [UIImage imageNamed:img]];
     [imagem setHidden:NO];
     

@@ -35,6 +35,8 @@
 		242145091AB8804900FADD41 /* imgz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242144F11AB8804900FADD41 /* imgz.jpg */; };
 		242E86AC1AB8A9D200825E07 /* InicioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E86AB1AB8A9D200825E07 /* InicioViewController.m */; };
 		249CE8B41AB74EA3007C282A /* DictionaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 249CE8B31AB74EA3007C282A /* DictionaryManager.m */; };
+		24DC24361ABB335B0017A1E8 /* dicionario.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DC24351ABB335B0017A1E8 /* dicionario.png */; };
+		24F51E8D1ABB2DC50089939A /* TabView.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F51E8C1ABB2DC50089939A /* TabView.png */; };
 		27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4C18B76AF50053A99C /* Foundation.framework */; };
 		27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4E18B76AF50053A99C /* CoreGraphics.framework */; };
 		27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
@@ -92,6 +94,8 @@
 		242E86AB1AB8A9D200825E07 /* InicioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InicioViewController.m; sourceTree = "<group>"; };
 		249CE8B21AB74EA3007C282A /* DictionaryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryManager.h; sourceTree = "<group>"; };
 		249CE8B31AB74EA3007C282A /* DictionaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryManager.m; sourceTree = "<group>"; };
+		24DC24351ABB335B0017A1E8 /* dicionario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dicionario.png; path = Images.xcassets/dicionario.png; sourceTree = "<group>"; };
+		24F51E8C1ABB2DC50089939A /* TabView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TabView.png; path = Images.xcassets/TabView.png; sourceTree = "<group>"; };
 		27156F4918B76AF50053A99C /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27156F4C18B76AF50053A99C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27156F4E18B76AF50053A99C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +178,8 @@
 				27156F5B18B76AF50053A99C /* MackenzieAppDelegate.h */,
 				27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */,
 				27156F5E18B76AF50053A99C /* Images.xcassets */,
+				24DC24351ABB335B0017A1E8 /* dicionario.png */,
+				24F51E8C1ABB2DC50089939A /* TabView.png */,
 				242144EC1AB8804900FADD41 /* imgu.jpg */,
 				242144EE1AB8804900FADD41 /* imgw.jpg */,
 				242144DA1AB8804900FADD41 /* imgc.jpg */,
@@ -335,10 +341,12 @@
 				242145091AB8804900FADD41 /* imgz.jpg in Resources */,
 				242144D81AB8802700FADD41 /* imga.jpg in Resources */,
 				242144F71AB8804900FADD41 /* imgh.jpg in Resources */,
+				24F51E8D1ABB2DC50089939A /* TabView.png in Resources */,
 				242145061AB8804900FADD41 /* imgw.jpg in Resources */,
 				242144FA1AB8804900FADD41 /* imgk.jpg in Resources */,
 				242144D91AB8802700FADD41 /* imgb.jpg in Resources */,
 				242144F31AB8804900FADD41 /* imgd.jpg in Resources */,
+				24DC24361ABB335B0017A1E8 /* dicionario.png in Resources */,
 				242145071AB8804900FADD41 /* imgx.jpg in Resources */,
 				242144F81AB8804900FADD41 /* imgi.jpg in Resources */,
 				242145081AB8804900FADD41 /* imgy.jpg in Resources */,
