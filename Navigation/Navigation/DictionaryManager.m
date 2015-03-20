@@ -12,6 +12,8 @@
 //    NSMutableArray *views;
 }
 
+//@synthesize palavras, imagens, letras;
+
 static DictionaryManager *SINGLETON = nil;
 static int cont = 0;
 static bool isFirst = YES;

@@ -22,9 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [table setDelegate:self];
-//    [table setDataSource:self];
-    
     
     self.view.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
 
@@ -46,13 +43,15 @@
     botao.frame = CGRectMake(63, 100, 200, 40);
     
 //    TableView e opções
-    table = [[UITableView alloc]initWithFrame:CGRectMake(25, 150, 270, 500)];
+    table = [[UITableView alloc]initWithFrame:CGRectMake(25, 150, 270, 350)];
     table.backgroundColor = [UIColor colorWithRed:0.960 green:0.960 blue:0.862 alpha:0.5];
     CALayer *lay = table.layer;
     [lay setMasksToBounds:YES];
     [lay setCornerRadius: 4.0];
     [lay setBorderWidth:1.0];
     [lay setBorderColor:[[UIColor colorWithWhite: 0.8 alpha: 1.0] CGColor]];
+    [table setDelegate:self];
+    [table setDataSource:self];
     
     [self.view addSubview:textoBusca];
     [self.view addSubview:botao];
@@ -62,6 +61,44 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 26;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    DictionaryManager *dictionary = [DictionaryManager sharedInstance];
+    UITableViewCell *celula = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    NSArray *array = [dictionary iniciaPalavras];
+    NSLog(@"%lu", array.count);
+    
+    celula.textLabel.text = [array objectAtIndex: indexPath.row];
+    
+    return celula;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DictionaryManager *dictionary = [DictionaryManager sharedInstance];
+    int i = (int)indexPath.row;
+    [dictionary setCont: i];
+    
+    //                Gambiarra
+    UINavigationController *navigation = [[UINavigationController alloc]init];
+    LetrasViewController *letra = [[LetrasViewController alloc]initWithNibName:nil bundle:NULL];
+    [navigation setViewControllers:[NSArray arrayWithObjects:letra, nil]];
+    
+    UIImage *imagem1 = [[UIImage alloc]init];
+    imagem1 = [UIImage imageNamed:@"TabView.png"];
+    
+    navigation.tabBarItem = [[UITabBarItem alloc]initWithTitle:nil image:imagem1 tag: 1];
+    
+    [self.tabBarController setViewControllers: [NSArray arrayWithObjects:self, navigation, nil]];
+    [self.tabBarController setSelectedIndex:1];
 }
 
 - (NSString *) formatar: (NSString *)entrada{
@@ -86,6 +123,8 @@
                 NSLog(@"GO");
                 find = true;
                 [dictionary setCont:i];
+                
+//                Gambiarra
                 UINavigationController *navigation = [[UINavigationController alloc]init];
                 LetrasViewController *letra = [[LetrasViewController alloc]initWithNibName:nil bundle:NULL];
                 [navigation setViewControllers:[NSArray arrayWithObjects:letra, nil]];
