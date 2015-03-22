@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LetrasViewController : UIViewController <UINavigationControllerDelegate>
+@interface LetrasViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
 @end

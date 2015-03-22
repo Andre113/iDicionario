@@ -18,6 +18,8 @@
     UILabel *palavra;
     UIImageView *imagem;
     UIButton *botao;
+    UIToolbar *tool;
+    UITextField *texto;
 }
 
 @end
@@ -41,7 +43,7 @@
     [palavra setHidden:YES];
     
     //Imagem
-    imagem = [[UIImageView alloc] initWithFrame:CGRectMake(30, 400, 260, 180)];
+    imagem = [[UIImageView alloc] initWithFrame:CGRectMake(30, 380, 260, 180)];
     [imagem.layer setBorderColor: [[UIColor blackColor] CGColor]];
     [imagem.layer setBorderWidth: 4.0];
     [imagem setHidden:YES];
@@ -52,6 +54,24 @@
     [botao setTitle:@"Mostre" forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
+    
+    //Toolbar
+    tool = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 45)];
+    [tool setBackgroundColor: [UIColor blueColor]];
+    UIBarButtonItem *editar = self.editButtonItem;
+    tool.items = @[editar];
+    
+    //TextField
+    texto = [[UITextField alloc]initWithFrame:CGRectMake(65, 450, 200, 30)];
+    texto.textAlignment = NSTextAlignmentLeft;
+    texto.borderStyle = UITextBorderStyleRoundedRect;
+    texto.font = [UIFont systemFontOfSize:12];
+    texto.keyboardType = UIKeyboardTypeDefault;
+    texto.returnKeyType = UIReturnKeyDone;
+    texto.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    texto.delegate = self;
+    [texto setHidden:YES];
+    
     
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target: self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem=back;
@@ -71,6 +91,8 @@
     [self.view addSubview:botao];
     [self.view addSubview:palavra];
     [self.view addSubview:imagem];
+    [self.view addSubview:tool];
+    [self.view addSubview:texto];
     
     //Testes
     NSLog (@"%d", cont);
@@ -102,8 +124,12 @@
     [UIView animateWithDuration:0.75 animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
-        [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
-        [self.navigationController pushViewController:proximo animated:NO];
+        
+//        [self.navigationController setViewControllers:[NSArray arrayWithObjects: self, nil]];
+//        [self.navigationController pushViewController:proximo animated:NO];
+        
+        [self.navigationController setViewControllers:[NSArray arrayWithObjects: proximo, self, nil]];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 
@@ -125,7 +151,7 @@
                          [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
                          [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
                      }];
-
+    
     [self.navigationController setViewControllers:[NSArray arrayWithObjects: last, self, nil]];
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -143,7 +169,9 @@
     [palavra setHidden:NO];
     
     NSString *img = [imagens objectAtIndex:cont];
-    [imagem setImage: [UIImage imageNamed:img]];
+    [imagem setImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource: img ofType:nil]]];
+    NSLog (@"%@", img);
+//    [imagem setImage: [UIImage imageNamed:img]];
     
 //    [imagem setImage: [UIImage imageWithContentsOfFile:img]];
     [imagem setHidden:NO];
@@ -155,12 +183,45 @@
 //Método de animação
 -(void) animacao{
     [UIView animateWithDuration: 1 delay: 0 options:UIViewAnimationCurveEaseIn animations:^{
-        palavra.transform= CGAffineTransformMakeTranslation(0, -180);
-        imagem.transform= CGAffineTransformMakeTranslation(0, -180);
+        palavra.transform= CGAffineTransformMakeTranslation(0, -140);
+        imagem.transform= CGAffineTransformMakeTranslation(0, -140);
     }
                      completion:^(BOOL finished) {
                      }
      ];
+}
+
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    
+    //here you have location of user's finger
+    CGPoint location = [touch locationInView:self.view];
+    
+    [UIView beginAnimations:@"Dragging A DraggableView" context:nil];
+    CGPoint pos = [touch locationInView:self.view];
+
+    [UIView animateWithDuration:0 animations:^{
+        imagem.transform = CGAffineTransformMakeTranslation(pos.x-imagem.center.x, pos.y-imagem.center.y);
+    }];
+    
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing: editing animated:YES];
+    if(editing){
+        [texto setHidden:NO];
+    }
+    
+    else{
+        if([texto.text isEqualToString: @""]){
+            
+        }
+        else{
+            [palavra setText:texto.text];
+        }
+        [texto setHidden:YES];
+    }
 }
 
 ////Método para pegar uma cor aleatória
