@@ -51,7 +51,6 @@
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* LetrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* LetrasViewController.m */; };
-		27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7F18BA8B210053A99C /* LetraBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +116,6 @@
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
 		27156F7B18BA89430053A99C /* LetrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetrasViewController.h; sourceTree = "<group>"; };
 		27156F7C18BA89430053A99C /* LetrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetrasViewController.m; sourceTree = "<group>"; };
-		27156F7E18BA8B210053A99C /* LetraBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraBViewController.h; sourceTree = "<group>"; };
-		27156F7F18BA8B210053A99C /* LetraBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraBViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +142,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240307A71AD4738300C6E7BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				242E86AA1AB8A9D200825E07 /* InicioViewController.h */,
+				242E86AB1AB8A9D200825E07 /* InicioViewController.m */,
+				27156F7B18BA89430053A99C /* LetrasViewController.h */,
+				27156F7C18BA89430053A99C /* LetrasViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		240307A81AD473B000C6E7BA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				249CE8B21AB74EA3007C282A /* DictionaryManager.h */,
+				249CE8B31AB74EA3007C282A /* DictionaryManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		240DDF161AD4732300E0E15F /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				24DC24351ABB335B0017A1E8 /* dicionario.png */,
+				24F51E8C1ABB2DC50089939A /* TabView.png */,
+				242144EC1AB8804900FADD41 /* imgu.jpg */,
+				242144EE1AB8804900FADD41 /* imgw.jpg */,
+				242144DA1AB8804900FADD41 /* imgc.jpg */,
+				242144DB1AB8804900FADD41 /* imgd.jpg */,
+				242144DC1AB8804900FADD41 /* imge.jpg */,
+				242144DD1AB8804900FADD41 /* imgf.jpg */,
+				242144DE1AB8804900FADD41 /* imgg.jpg */,
+				242144DF1AB8804900FADD41 /* imgh.jpg */,
+				242144E01AB8804900FADD41 /* imgi.jpg */,
+				242144E11AB8804900FADD41 /* imgj.jpg */,
+				242144E21AB8804900FADD41 /* imgk.jpg */,
+				242144E31AB8804900FADD41 /* imgl.jpg */,
+				242144E41AB8804900FADD41 /* imgm.jpg */,
+				242144E51AB8804900FADD41 /* imgn.jpg */,
+				242144E61AB8804900FADD41 /* imgo.jpg */,
+				242144E71AB8804900FADD41 /* imgp.jpg */,
+				242144E81AB8804900FADD41 /* imgq.jpg */,
+				242144E91AB8804900FADD41 /* imgr.jpg */,
+				242144EA1AB8804900FADD41 /* imgs.jpg */,
+				242144EB1AB8804900FADD41 /* imgt.jpg */,
+				242144ED1AB8804900FADD41 /* imgv.jpg */,
+				242144EF1AB8804900FADD41 /* imgx.jpg */,
+				242144F01AB8804900FADD41 /* imgy.jpg */,
+				242144F11AB8804900FADD41 /* imgz.jpg */,
+				242144D61AB8802700FADD41 /* imga.jpg */,
+				242144D71AB8802700FADD41 /* imgb.jpg */,
+			);
+			name = Imagens;
+			sourceTree = "<group>";
+		};
 		27156F4018B76AF50053A99C = {
 			isa = PBXGroup;
 			children = (
@@ -180,40 +232,10 @@
 			children = (
 				27156F5B18B76AF50053A99C /* MackenzieAppDelegate.h */,
 				27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */,
-				27156F5E18B76AF50053A99C /* Images.xcassets */,
-				24DC24351ABB335B0017A1E8 /* dicionario.png */,
-				24F51E8C1ABB2DC50089939A /* TabView.png */,
-				242144EC1AB8804900FADD41 /* imgu.jpg */,
-				242144EE1AB8804900FADD41 /* imgw.jpg */,
-				242144DA1AB8804900FADD41 /* imgc.jpg */,
-				242144DB1AB8804900FADD41 /* imgd.jpg */,
-				242144DC1AB8804900FADD41 /* imge.jpg */,
-				242144DD1AB8804900FADD41 /* imgf.jpg */,
-				242144DE1AB8804900FADD41 /* imgg.jpg */,
-				242144DF1AB8804900FADD41 /* imgh.jpg */,
-				242144E01AB8804900FADD41 /* imgi.jpg */,
-				242144E11AB8804900FADD41 /* imgj.jpg */,
-				242144E21AB8804900FADD41 /* imgk.jpg */,
-				242144E31AB8804900FADD41 /* imgl.jpg */,
-				242144E41AB8804900FADD41 /* imgm.jpg */,
-				242144E51AB8804900FADD41 /* imgn.jpg */,
-				242144E61AB8804900FADD41 /* imgo.jpg */,
-				242144E71AB8804900FADD41 /* imgp.jpg */,
-				242144E81AB8804900FADD41 /* imgq.jpg */,
-				242144E91AB8804900FADD41 /* imgr.jpg */,
-				242144EA1AB8804900FADD41 /* imgs.jpg */,
-				242144EB1AB8804900FADD41 /* imgt.jpg */,
-				242144ED1AB8804900FADD41 /* imgv.jpg */,
-				242144EF1AB8804900FADD41 /* imgx.jpg */,
-				242144F01AB8804900FADD41 /* imgy.jpg */,
-				242144F11AB8804900FADD41 /* imgz.jpg */,
-				242144D61AB8802700FADD41 /* imga.jpg */,
-				242144D71AB8802700FADD41 /* imgb.jpg */,
+				240307A81AD473B000C6E7BA /* Manager */,
+				240307A71AD4738300C6E7BA /* Views */,
+				240DDF161AD4732300E0E15F /* Imagens */,
 				27156F5318B76AF50053A99C /* Supporting Files */,
-				27156F7B18BA89430053A99C /* LetrasViewController.h */,
-				27156F7C18BA89430053A99C /* LetrasViewController.m */,
-				27156F7E18BA8B210053A99C /* LetraBViewController.h */,
-				27156F7F18BA8B210053A99C /* LetraBViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -225,12 +247,9 @@
 				27156F5518B76AF50053A99C /* InfoPlist.strings */,
 				27156F5818B76AF50053A99C /* main.m */,
 				27156F5A18B76AF50053A99C /* Navigation-Prefix.pch */,
-				249CE8B21AB74EA3007C282A /* DictionaryManager.h */,
-				249CE8B31AB74EA3007C282A /* DictionaryManager.m */,
-				242E86AA1AB8A9D200825E07 /* InicioViewController.h */,
-				242E86AB1AB8A9D200825E07 /* InicioViewController.m */,
 				24DC24371ABB560C0017A1E8 /* iniTableViewCell.h */,
 				24DC24381ABB560C0017A1E8 /* iniTableViewCell.m */,
+				27156F5E18B76AF50053A99C /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Mackenzie;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Vinicius Miana";
 				TargetAttributes = {
 					27156F6318B76AF50053A99C = {
@@ -382,7 +401,6 @@
 				27156F7D18BA89430053A99C /* LetrasViewController.m in Sources */,
 				24DC24391ABB560C0017A1E8 /* iniTableViewCell.m in Sources */,
 				249CE8B41AB74EA3007C282A /* DictionaryManager.m in Sources */,
-				27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +447,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -468,7 +485,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -526,7 +542,6 @@
 		27156F7918B76AF50053A99C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -549,7 +564,6 @@
 		27156F7A18B76AF50053A99C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

@@ -9,16 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DictionaryManager : NSObject{
-
 }
-
-//@property (nonatomic, strong) NSArray *palavras;
-//@property (nonatomic, strong) NSArray *imagens;
-//@property (nonatomic, strong) NSArray *letras;
 
 + (DictionaryManager *)sharedInstance;
 
-//- (Boolean)checkView;
 - (void) setCont:(int)cont;
 - (int) getCont;
 - (NSArray *) iniciaLetras;
